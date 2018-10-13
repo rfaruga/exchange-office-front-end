@@ -1,17 +1,17 @@
-.page-footer {
-    background-color: darkslategrey;
-    width: 100%;
-    margin: 0px auto;
-    height: 40px;
+#page-footer {
     position: absolute;
     bottom: 0px;
-    left: 0px;
+    width: 100%;
+    height: 40px;
+    background-color: #25274D;
 }
 
-h2 {
-    width: 1000px;
+h3 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80%;
     margin: 0 auto;
-    padding: 5px;
     text-align: center;
-    color: aliceblue;
+    color: lightgray;
 }
