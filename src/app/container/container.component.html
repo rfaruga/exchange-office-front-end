@@ -1,28 +1,30 @@
-<div id="page-container">
+<div id="content">
   <h1>
     Welcome to the exchange office
   </h1>
   <h2>
     Input the value, select initial and destination currency
   </h2>
-  <form class="example-form" action="http://foo.com" method="get">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Value" value="0">
+  <form class="exchange-form">
+    <mat-form-field class="value-full-width">
+      <input matInput placeholder="Value" value="0" [formControl]="valueControl">
     </mat-form-field>
-    <mat-select placeholder="Initial currency">
+    <mat-select placeholder="Initial currency" [formControl]="initialControl">
         <mat-option *ngFor="let initialCurrency of currencies" [value]="initialCurrency">
           {{initialCurrency}}
         </mat-option>
     </mat-select>
     
-    <mat-select placeholder="Destination currency">
+    <mat-select placeholder="Destination currency" [formControl]="destinationControl">
         <mat-option *ngFor="let destinationCurrency of currencies" [value]="destinationCurrency">
           {{destinationCurrency}}
         </mat-option>
     </mat-select>
-    <button mat-button type="submit">
+    <button mat-raised-button (click)="calculateValue()" [disabled]="!valueControl.valid || !initialControl.valid || !destinationControl.valid">
       Calculate
     </button>
-
   </form>
+  <h4>
+    {{result}}
+  </h4>
 </div>
