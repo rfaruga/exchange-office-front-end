@@ -11,7 +11,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 export class ContainerComponent implements OnInit {
   currencies: string[] = ['PLN', 'USD', 'EUR', 'GBP'];
-  valueControl = new FormControl('0', [Validators.required, Validators.pattern('[0-9]*')]);
+  valueControl = new FormControl('0', [Validators.required, Validators.pattern('[0-9]+[0-9.]*')]);
   initialControl = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]);
   destinationControl = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]);
   result: String;
